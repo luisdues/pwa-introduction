@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>LIST</h1>
+  <div class="button-container">
+    <button mat-raised-button color="primary" (click)="toggleView('cards')">Tarjetas</button>
+    <button mat-raised-button color="primary" (click)="toggleView('table')">Tabla</button>
+  </div>
+  <div class="spinner-container" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+  </div>
+  <div [@fade] *ngIf="!loading && itemsLoaded" class="list-container" [ngClass]="{ show: showList }">
+    <div *ngIf="viewType === 'cards'">
+      <div class="card-container">
+        <app-card *ngFor="let item of items" [item]="item"></app-card>
+      </div>
+    </div>
+    <div *ngIf="viewType === 'table'">
+      <ul class="grid">
+        <app-grid *ngFor="let item of items"></app-grid>
+      </ul>
+    </div>
+  </div>
+</div>

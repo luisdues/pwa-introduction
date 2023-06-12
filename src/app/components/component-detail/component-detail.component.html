@@ -1,0 +1,25 @@
+<div class="container mt-5">
+
+    <div *ngIf="item" class="row animate__animated animate__bounce animate__fadeIn">
+        <div class="col-md-9">
+            <p><strong>Identifier:</strong> {{item.phone}}</p>
+           
+        </div>
+
+        <div class="col-md-3">d
+            <a class="btn btn-danger" routerLink="/">Back</a>
+        </div>
+    </div> <button class="btn btn-primary mt-5" (click)="toggleExpansionPanel()">Show All Details</button>
+
+    <mat-expansion-panel [expanded]="showDetails" *ngIf="item">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Additional Details
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p><strong>Nation:</strong>{{item.nat}}</p>
+      <p><strong>Url:</strong> {{item.picture}}</p>
+      <img style="width: 80%; height: 80%;" class="rounded" src="{{item.picture}}" alt="imagen">
+    </mat-expansion-panel>
+  
+  </div>

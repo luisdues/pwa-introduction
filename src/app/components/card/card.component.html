@@ -1,0 +1,8 @@
+<mat-card class="card"*ngIf="item">
+    <mat-card-header>
+      <mat-card-title [routerLink]="['/detail', item.phone]">{{ item.phone }} - {{ item.nat }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <img style="width: 30%; height: 30%;" class="rounded" src="{{item.picture}}" alt="imagen">
+    </mat-card-content>
+  </mat-card>
